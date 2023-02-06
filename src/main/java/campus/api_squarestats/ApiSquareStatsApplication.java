@@ -1,4 +1,4 @@
-package com.example.api_squarestats;
+package campus.api_squarestats;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
