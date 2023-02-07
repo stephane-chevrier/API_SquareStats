@@ -1,6 +1,6 @@
 package campus.api_squarestats;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.sql.SQLException;
 
 @RestController
+@RequiredArgsConstructor
 public class ControllerGamePart {
 
-    @Autowired
-    private ServiceGamePart serviceGamePart;
+    private final ServiceGamePartImpl serviceGamePartImpl;
 
-    @GetMapping("/gamepart/{gamepartId}/info")
-    public Object infoGame(@PathVariable("gamepartId") int gamePartId) throws SQLException {
-        return serviceGamePart.getGamePartInfo(gamePartId);
+    @GetMapping("/gamepart/{gamePartId}/info")
+    public DtoGamePartWeb infoGamePart(@PathVariable("gamePartId") Long gameId) throws SQLException {
+        return serviceGamePartImpl.getGamePartInfo(gameId);
     }
+
 }

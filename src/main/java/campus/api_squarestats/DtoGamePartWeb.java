@@ -1,20 +1,22 @@
 package campus.api_squarestats;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.List;
+
+/**
+ * The type Dto game part web.
+ */
+@Getter
+@Setter
 public class DtoGamePartWeb {
-
     // creation des proprietes de l'objet
-    private int id_gamepart;
-
-    public DtoGamePartWeb() {
-    }
-
-    public int getId_gamepart() {
-        return id_gamepart;
-    }
-
-    public void setId_gamepart(int id_gamepart) {
-        this.id_gamepart = id_gamepart;
-    }
+    private Long idGamepart;
+    private String gameId;
+    private String gameStatus;
+    private Long currentPlayer;
+    private List<DtoPlayerPartWeb> players;
 }
 
 
